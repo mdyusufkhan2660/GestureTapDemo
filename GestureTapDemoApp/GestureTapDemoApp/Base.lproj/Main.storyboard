@@ -1,24 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TlS-tX-tg5">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="tWN-sZ-CLq">
+            <objects>
+                <navigationController id="TlS-tX-tg5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qbR-hk-4Kc">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2tT-qo-SFy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Lz-dd-Yz7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-711" y="-35"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GestureTapDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yz-3u-Sav">
+                                <rect key="frame" x="20" y="384" width="353" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1Yz-3u-Sav" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="281" id="8GJ-ga-R1J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Yz-3u-Sav" secondAttribute="trailing" constant="20" id="ZXh-lo-ecb"/>
+                            <constraint firstItem="1Yz-3u-Sav" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="k5y-fx-wDq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Yz-3u-Sav" secondAttribute="bottom" constant="350" id="vrw-KT-1L9"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SMI-yM-inH" appends="YES" id="Na2-nu-5aa"/>
+                            <outletCollection property="gestureRecognizers" destination="HmA-gi-xY7" appends="YES" id="j6Y-uM-xrt"/>
+                            <outletCollection property="gestureRecognizers" destination="1dT-By-YhY" appends="YES" id="RwL-T8-mrr"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="4yL-yW-BKB"/>
+                    <connections>
+                        <outlet property="myView" destination="8bC-Xf-vdC" id="zNL-pn-Heg"/>
+                        <outlet property="tapCountLabel" destination="1Yz-3u-Sav" id="QN0-fa-8J5"/>
+                        <segue destination="pwf-e2-YKi" kind="show" identifier="showSecond" id="qf9-Rp-qrJ"/>
+                        <segue destination="7L3-8z-Bfr" kind="show" identifier="showThird" id="C77-jF-9M4"/>
+                        <segue destination="3zX-8Q-acz" kind="show" identifier="showForth" id="YJf-kH-HvL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SMI-yM-inH">
+                    <connections>
+                        <action selector="didTap:" destination="BYZ-38-t0r" id="4VE-Xu-6LI"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="HmA-gi-xY7">
+                    <connections>
+                        <action selector="didLongPress:" destination="BYZ-38-t0r" id="ZWp-nG-6L6"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="1dT-By-YhY">
+                    <connections>
+                        <action selector="didPanGesture:" destination="BYZ-38-t0r" id="M30-uA-Dyv"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="132" y="-34"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="eVt-op-ZsC">
+            <objects>
+                <viewController id="7L3-8z-Bfr" customClass="ThirdViewController" customModule="GestureTapDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R8j-Ts-eVY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="p7L-4H-tfw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oZS-Jm-7YZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGH-pb-Yrl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="-35"/>
+        </scene>
+        <!--Forth View Controller-->
+        <scene sceneID="EsA-s9-fko">
+            <objects>
+                <viewController id="3zX-8Q-acz" customClass="ForthViewController" customModule="GestureTapDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XSA-MQ-BII">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TCs-rj-dEh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="prF-5p-qwb" appends="YES" id="cwr-D2-N8P"/>
+                            <outletCollection property="gestureRecognizers" destination="cwt-kG-4sf" appends="YES" id="5cV-Kt-i4Z"/>
+                            <outletCollection property="gestureRecognizers" destination="ReO-Os-bTe" appends="YES" id="75k-pu-t9O"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="S6F-cn-c4Q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1z3-Si-bHN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="prF-5p-qwb">
+                    <connections>
+                        <action selector="didPinch:" destination="3zX-8Q-acz" id="Kvr-HU-Qce"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="cwt-kG-4sf"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="ReO-Os-bTe"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="639"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Wab-e4-Ke1">
+            <objects>
+                <viewController id="pwf-e2-YKi" customClass="SecondViewController" customModule="GestureTapDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Zz-vK-R1X">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9WH-jA-x0E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nth-gU-5uR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="myy-A7-5qE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="-706"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
