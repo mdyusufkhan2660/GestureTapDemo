@@ -110,7 +110,6 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="prF-5p-qwb" appends="YES" id="cwr-D2-N8P"/>
-                            <outletCollection property="gestureRecognizers" destination="cwt-kG-4sf" appends="YES" id="5cV-Kt-i4Z"/>
                             <outletCollection property="gestureRecognizers" destination="ReO-Os-bTe" appends="YES" id="75k-pu-t9O"/>
                         </connections>
                     </view>
@@ -122,8 +121,16 @@
                         <action selector="didPinch:" destination="3zX-8Q-acz" id="Kvr-HU-Qce"/>
                     </connections>
                 </pinchGestureRecognizer>
-                <rotationGestureRecognizer id="cwt-kG-4sf"/>
-                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="ReO-Os-bTe"/>
+                <rotationGestureRecognizer id="cwt-kG-4sf">
+                    <connections>
+                        <action selector="didRotate:" destination="3zX-8Q-acz" id="auQ-nA-8LJ"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="ReO-Os-bTe">
+                    <connections>
+                        <action selector="didEdgePan:" destination="3zX-8Q-acz" id="sfH-hc-V17"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="931" y="639"/>
         </scene>

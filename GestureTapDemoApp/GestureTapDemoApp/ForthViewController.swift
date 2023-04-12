@@ -16,6 +16,20 @@ class ForthViewController: UIViewController {
         myView.center = view.center
     }
 
+    @IBAction func didEdgePan(_ sender: UIScreenEdgePanGestureRecognizer) {
+        if(sender.state == .recognized){
+            print("Screen edge swiped!")
+        }
+        
+    }
+    
+    @IBAction func didRotate(_ sender: UIRotationGestureRecognizer) {
+        if(sender.state == .changed){
+            myView.transform = CGAffineTransform(rotationAngle: sender.rotation)
+            print("Angle: \(sender.rotation)")
+        }
+        
+    }
     @IBAction func didPinch(_ sender: UIPinchGestureRecognizer) {
         if(sender.state == .changed){
             let scale = sender.scale
